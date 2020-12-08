@@ -10,7 +10,7 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 2345
+      port: 2346
       targetPort: 3001
     - name: db
       port: 5432
