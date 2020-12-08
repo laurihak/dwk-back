@@ -64,7 +64,7 @@ const postTodo = (todo) => {
     .catch();
 };
 
-app.get("/api/todos", async (request, response) => {
+app.get("/todos", async (request, response) => {
   const result = await getTodos().catch((e) => e);
   if (result) {
     response.json(result);
@@ -74,7 +74,7 @@ app.get("/api/todos", async (request, response) => {
   return;
 });
 
-app.post("/api/todos", (request, response) => {
+app.post("/todos", (request, response) => {
   const body = request.body;
   if (body.content.length < 1) {
     return response.status(400).json({
@@ -95,11 +95,11 @@ app.post("/api/todos", (request, response) => {
 });
 
 app.get("/api", (req, res) => {
-  res.send("server is running");
+  res.status(200).send("server is running, at api/");
 });
 
 app.get("/", (req, res) => {
-  res.send("server is running");
+  res.status(200).send("server is running");
 });
 
 const unknownEndpoint = (request, response) => {
