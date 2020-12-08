@@ -15,11 +15,7 @@ spec:
     spec:
       containers:
         - name: project-backend
-          image: PROJECTBACK/IMAGE
-          resources:
-            limits:
-              memory: '128Mi'
-              cpu: '500m'
+          image: PROJECT/IMAGE
           envFrom:
               - configMapRef:
                   name: postgres-configuration
