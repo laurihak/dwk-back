@@ -27,7 +27,7 @@ const port = 3001;
 
 const { fetchImage } = require("./utils/fetcher");
 
-app.use("/image", express.static("./files/image.jpeg"));
+app.use("/api/image", express.static("./files/image.jpeg"));
 
 fetchImage();
 
