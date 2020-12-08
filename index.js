@@ -64,7 +64,7 @@ const postTodo = (todo) => {
     .catch();
 };
 
-app.get("/todos", async (request, response) => {
+app.get("/api/todos", async (request, response) => {
   const result = await getTodos().catch((e) => e);
   if (result) {
     response.json(result);
@@ -74,7 +74,7 @@ app.get("/todos", async (request, response) => {
   return;
 });
 
-app.post("/todos", (request, response) => {
+app.post("/api/todos", (request, response) => {
   const body = request.body;
   if (body.content.length < 1) {
     return response.status(400).json({
