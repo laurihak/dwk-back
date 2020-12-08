@@ -3,6 +3,11 @@ kind: Kustomization
 resources:
 - manifests/deployment.yaml
 - manifests/service.yaml
+- postgres/manifests/configmap.yaml
+- postgres/manifests/secret.yaml
+- postgres/manifests/service.yaml
+- postgres/manifests/statefulset.yaml
+
 images:
   - name: PROJECT/IMAGE
     newName: project-backend
