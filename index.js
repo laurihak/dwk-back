@@ -94,6 +94,10 @@ app.post("/api/todos", (request, response) => {
     .catch((e) => e);
 });
 
+app.get("/api", (req, res) => {
+  res.send("server is running");
+});
+
 app.get("/", (req, res) => {
   res.send("server is running");
 });
